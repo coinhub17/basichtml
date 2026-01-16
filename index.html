@@ -69,47 +69,27 @@
       font-weight: normal;
     }
 
-    /* GOLD DIVIDER */
-    .ceremonial-divider {
-      grid-column: 1 / -1;
-      height: 2px;
-      width: 80%;
-      margin: 3rem auto 0 auto;
-      background: linear-gradient(
-        to right,
-        transparent,
-        var(--ceremonial-gold),
-        transparent
-      );
-    }
-
-    /* Chairman */
     .leader-section {
-      text-align: center;
-      margin-top: -4.5rem;
-      position: relative;
-      z-index: 2;
+      display: flex;
+      flex-direction: column;   /* stack image and text vertically */
+      align-items: center;      /* center horizontally */
+      justify-content: center;  /* center vertically */
+      text-align: center;       /* center text inside div */
+      height: 100vh;            /* full viewport height */
+      background: #f7f7f7;      /* optional background */
     }
-
+  
     .leader-section img {
-      width: 135px;
-      height: 135px;
-      border-radius: 50%;
-      border: 3px solid var(--ceremonial-gold);
-      background: #fff;
-      object-fit: cover;
+      max-width: 200px;        /* adjust size as needed */
+      height: auto;
+      border-radius: 50%;      /* optional: circular image */
+      margin-bottom: 1rem;
     }
-
-    .leader-section h3 {
-      margin-top: 1rem;
-      text-align: center;
-      font-size: 1.6rem;
-      color: var(--deep-green);
+  
+    .ceremonial-divider h3,
+    .ceremonial-divider p {
+      margin: 0.2rem 0;
     }
-
-    .leader-section p {
-      font-style: italic;
-      margin-top: 0.3rem;
     }
 
     /* DESCRIPTION */
@@ -208,10 +188,7 @@
       <p>Chairman, Kerio Valley Nation</p>
     </div>
   </section>
-  
-  
-    
-</section><br><br><br>
+</section>
 
 
 
