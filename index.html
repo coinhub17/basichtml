@@ -4,117 +4,246 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kerio Valley Nation</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Merriweather', serif; margin: 0; padding: 0; background: #f7f7f7; color: #222; }
-    header { background: #002e1f; color: #f5f5f5; padding: 3rem 1rem; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { font-size: 1.2rem; margin-top: 0.5rem; font-style: italic; }
+    :root {
+      --primary-dark: #002e1f;
+      --ceremonial-gold: #c9a227;
+      --light-bg: #f7f7f7;
+    }
 
-    section { padding: 2.5rem 1rem; max-width: 1000px; margin: auto; }
-    h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; color: #002e1f; }
+    body {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      background: var(--light-bg);
+      color: #222;
+    }
 
-    .nation-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem; margin-bottom: 2rem; }
-    .nation-layout img { width: 100%; max-width: 300px; border-radius: 8px; border: 3px solid #002e1f; }
-    .leader-section { text-align: center; margin-top: 2rem; }
-    .leader-section img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid #002e1f; }
-    .leader-section h3 { margin-top: 1rem; font-size: 1.8rem; color: #002e1f; }
-    .leader-section p { font-size: 1.1rem; font-style: italic; margin-top: 0.3rem; }
+    header {
+      background: var(--primary-dark);
+      color: #f5f5f5;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
 
-    .description { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6; }
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+    }
 
-    form { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); margin-top: 2rem; }
-    form input, form textarea, form select { width: 100%; padding: 0.9rem; margin-bottom: 1.2rem; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; font-family: 'Merriweather', serif; }
-    form button { background: #002e1f; color: #f5f5f5; padding: 0.85rem 1.75rem; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; font-weight: bold; }
-    form button:hover { background: #004d33; }
+    header p {
+      font-style: italic;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
 
-    .success-message { display: none; background: #d4edda; color: #155724; padding: 1rem; border-radius: 6px; margin-top: 1rem; font-weight: bold; }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2.5rem 1rem;
+    }
 
-    footer { text-align: center; padding: 1.5rem; background: #002e1f; color: #f5f5f5; margin-top: 2rem; font-size: 0.9rem; }
+    /* FLAG & COURT OF ARMS */
+    .nation-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 5rem;
+      position: relative;
+    }
+
+    .nation-layout img {
+      width: 66%;
+      max-width: 220px;
+      border-radius: 6px;
+      border: 2px solid var(--ceremonial-gold);
+      display: block;
+      margin: 0 auto;
+    }
+
+    .nation-layout h3 {
+      text-align: center;
+      margin-top: 0.6rem;
+      font-weight: normal;
+    }
+
+    /* GOLD CEREMONIAL DIVIDER */
+    .ceremonial-divider {
+      grid-column: 1 / -1;
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--ceremonial-gold),
+        transparent
+      );
+      margin: 3rem auto 0 auto;
+    }
+
+    /* COMMANDER-IN-CHIEF */
+    .leader-section {
+      text-align: center;
+      margin-top: -4.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .leader-section img {
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+      border: 3px solid var(--ceremonial-gold);
+      background: #fff;
+      object-fit: cover;
+    }
+
+    .leader-section h3 {
+      margin-top: 1rem;
+      font-size: 1.7rem;
+      color: var(--primary-dark);
+    }
+
+    .leader-section p {
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    /* NATION DESCRIPTION */
+    .description {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 5px solid var(--ceremonial-gold);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    /* FORM */
+    h2 {
+      text-align: center;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.9rem;
+      margin-bottom: 1.2rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: var(--primary-dark);
+      color: #fff;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--primary-dark);
+      color: #f5f5f5;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Kerio Valley Nation</h1>
-    <p>"A Sovereign Micronation Advancing Prosperity, Heritage, and Governance"</p>
-  </header>
 
+<header>
+  <h1>Kerio Valley Nation</h1>
+  <p>“A Sovereign Micronation Advancing Prosperity, Heritage, and Governance”</p>
+</header>
 
-  <section class="nation-layout">
-    <div class="flag">
-      <img src="/ipkv (1).png">
-      <h3 style="text-align:center; margin-top:0.5rem;">National Flag</h3>
-    </div>
-    <div class="court-of-arms">
-      <img src="/logo8.png">
-      <h3 style="text-align:center; margin-top:0.5rem;">Court of Arms</h3>
-    </div>
-  </section>
-
-  <section class="leader-section">
-    <img src="/ppp.jpg">
-    <h3>Commander-in-Chief</h3>
-    <p>Supreme Head of State, Kerio Valley Nation</p>
-  </section>
-  <section class="description">
-  <div style="background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); border-left: 5px solid #002e1f;">
-    <p style="font-size: 1.2rem; line-height: 1.6; color: #222;">
-      The <strong>Kerio Valley Nation</strong> is a sovereign micronation situated in the heart of the Kerio Valley Highlands.
-      Governed by the <strong>Commander-in-Chief</strong> and administered through the Kerio Valley Council, the Nation
-      embodies principles of structured governance, heritage preservation, and economic prosperity. It maintains formal
-      diplomatic representation internationally and offers investors and citizens a framework of official recognition,
-      ceremonial documentation, and structured civic participation. The Nation fosters cultural exchange, strategic
-      partnerships, and sustainable development within a secure and formal governance system.
-    </p>
+<section class="nation-layout">
+  <div>
+    <img src="https://via.placeholder.com/300x200.png?text=National+Flag" alt="National Flag">
+    <h3>National Flag</h3>
   </div>
-  </section>
 
-  <section>
-    <h2>Investor & Citizenship Applications</h2>
-    <p>Eligibility for automatic citizenship is granted to individuals contributing capital investments exceeding <strong>$120,000</strong>. Applications are formally processed over a period of <strong>nine months</strong>.</p>
+  <div>
+    <img src="https://via.placeholder.com/300x200.png?text=Court+of+Arms" alt="Court of Arms">
+    <h3>Court of Arms</h3>
+  </div>
 
-    <form name="kvn-application" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="kvn-application">
-      <p style="display:none">
-        <label>Do not fill if human: <input name="bot-field"></label>
-      </p>
+  <div class="ceremonial-divider"></div>
+</section>
 
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <textarea name="message" placeholder="Cover Letter / Statement of Intent" rows="4" required></textarea>
-      <input type="text" name="investment_project" placeholder="Proposed Investment Project and Capital Commitment" required>
-      <input type="text" name="country" placeholder="Country of Residence" required>
-      <input type="file" name="id_document" accept=".pdf,.jpg,.png" required>
+<section class="leader-section">
+  <img src="https://via.placeholder.com/200.png?text=Commander" alt="Commander-in-Chief">
+  <h3>Commander-in-Chief</h3>
+  <p>Supreme Head of State, Kerio Valley Nation</p>
+</section>
 
-      <button type="submit">Submit Application</button>
+<section class="description">
+  <p>
+    The <strong>Kerio Valley Nation</strong> is a sovereign micronation founded upon
+    principles of formal governance, economic advancement, and cultural preservation.
+    Under the authority of the Commander-in-Chief, the Nation administers civic affairs,
+    investment frameworks, and ceremonial institutions with dignity and order.
+    Kerio Valley Nation welcomes responsible investors and applicants seeking formal
+    recognition, structured development opportunities, and participation in a growing
+    national vision anchored in heritage and progress.
+  </p>
+</section>
 
-      <div class="success-message" id="success-message">
-        <strong>Application Successful!</strong> Your submission has been received and will be reviewed within nine months.
-      </div>
-    </form>
-  </section>
+<section>
+  <h2>Investor & Citizenship Applications</h2>
+  <p style="text-align:center;">
+    Automatic citizenship is granted for capital investments exceeding <strong>$60,000</strong>.<br>
+    All applications are processed over a formal period of <strong>nine (9) months</strong>.
+  </p>
 
-  <footer>
-    &copy; 2026 Kerio Valley Nation | All Rights Reserved
-  </footer>
+  <form
+    name="kvn-application"
+    method="POST"
+    data-netlify="true"
+    enctype="multipart/form-data"
+    action="/success.html">
 
-  <script>
-    const form = document.querySelector('form');
-    const successMessage = document.getElementById('success-message');
+    <input type="hidden" name="form-name" value="kvn-application">
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <textarea name="message" rows="4" placeholder="Cover Letter / Statement of Intent" required></textarea>
+    <input type="text" name="investment" placeholder="Proposed Investment & Capital Commitment" required>
+    <input type="text" name="country" placeholder="Country of Residence" required>
+    <input type="file" name="id_document" accept=".pdf,.jpg,.png">
 
-      fetch('/', {
-        method: 'POST',
-        body: formData
-      }).then(() => {
-        successMessage.style.display = 'block';
-        form.reset();
-      }).catch((error) => alert('Submission failed: ' + error));
-    });
-  </script>
+    <button type="submit">Submit Application</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Kerio Valley Nation — All Rights Reserved
+</footer>
+
+</body>
+</html>
+
 </body>
 </html>
 
