@@ -14,9 +14,14 @@
     section { padding: 2.5rem 1rem; max-width: 1000px; margin: auto; }
     h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; color: #002e1f; }
 
-    .leaders, .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1rem; }
-    .leader, .service { background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); text-align: center; border-top: 4px solid #002e1f; }
-    .leader img, .service img { width: 100%; height: 160px; object-fit: cover; border-radius: 5px; margin-bottom: 1rem; }
+    .nation-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem; margin-bottom: 2rem; }
+    .nation-layout img { width: 100%; max-width: 300px; border-radius: 8px; border: 3px solid #002e1f; }
+    .leader-section { text-align: center; margin-top: 2rem; }
+    .leader-section img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid #002e1f; }
+    .leader-section h3 { margin-top: 1rem; font-size: 1.8rem; color: #002e1f; }
+    .leader-section p { font-size: 1.1rem; font-style: italic; margin-top: 0.3rem; }
+
+    .description { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6; }
 
     form { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); margin-top: 2rem; }
     form input, form textarea, form select { width: 100%; padding: 0.9rem; margin-bottom: 1.2rem; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; font-family: 'Merriweather', serif; }
@@ -31,49 +36,35 @@
 <body>
   <header>
     <h1>Kerio Valley Nation</h1>
-    <p>"A Sovereign Micronation Advancing Prosperity, Investment, and Heritage"</p>
+    <p>"A Sovereign Micronation Advancing Prosperity, Heritage, and Governance"</p>
   </header>
 
-  <section>
-    <h2>Governance</h2>
-    <div class="leaders">
-      <div class="leader">
-        <img src="https://via.placeholder.com/300x160.png?text=Commander-in-Chief" alt="Commander-in-Chief">
-        <h3>Commander-in-Chief</h3>
-        <p>Supreme Head of State, Kerio Valley Nation</p>
-      </div>
-      <div class="leader">
-        <img src="https://via.placeholder.com/300x160.png?text=Councilor+1" alt="Councilor">
-        <h3>Councilor</h3>
-        <p>Representative, Kerio Valley National Council</p>
-      </div>
-      <div class="leader">
-        <img src="https://via.placeholder.com/300x160.png?text=Councilor+2" alt="Councilor">
-        <h3>Councilor</h3>
-        <p>Representative, Kerio Valley National Council</p>
-      </div>
+  <section class="description">
+    <p>
+      The <strong>Kerio Valley Nation</strong> is a modern sovereign micronation situated in the heart of the Kerio Valley Highlands.
+      Governed under the leadership of the <strong>Commander-in-Chief</strong> and overseen by the Kerio Valley Council, the Nation
+      is committed to the principles of investment, heritage preservation, and structured governance. The Nation maintains
+      diplomatic representation abroad, fostering international partnerships, economic growth, and cultural exchange. Citizens
+      and investors are welcomed into a thriving national framework, where formal recognition, land ownership, and official
+      documentation are processed with utmost diligence and ceremonial precision.
+    </p>
+  </section>
+
+  <section class="nation-layout">
+    <div class="flag">
+      <img src="https://via.placeholder.com/300x200.png?text=National+Flag" alt="National Flag">
+      <h3 style="text-align:center; margin-top:0.5rem;">National Flag</h3>
+    </div>
+    <div class="court-of-arms">
+      <img src="https://via.placeholder.com/300x200.png?text=Court+of+Arms" alt="Court of Arms">
+      <h3 style="text-align:center; margin-top:0.5rem;">Court of Arms</h3>
     </div>
   </section>
 
-  <section>
-    <h2>National Institutions & Services</h2>
-    <div class="services">
-      <div class="service">
-        <img src="https://via.placeholder.com/300x160.png?text=Land+Titles" alt="Land Titles">
-        <h3>Land Titles</h3>
-        <p>Official issuance of land ownership documents to authorized investors.</p>
-      </div>
-      <div class="service">
-        <img src="https://via.placeholder.com/300x160.png?text=Court+of+Arms" alt="Court of Arms">
-        <h3>Court of Arms</h3>
-        <p>Registration of businesses, driving licenses, and official national symbols.</p>
-      </div>
-      <div class="service">
-        <img src="https://via.placeholder.com/300x160.png?text=Flag+and+Emblem" alt="Flag and Emblem">
-        <h3>National Symbols</h3>
-        <p>Flag, coat of arms, and emblems representing the heritage of Kerio Valley Nation.</p>
-      </div>
-    </div>
+  <section class="leader-section">
+    <img src="https://via.placeholder.com/200.png?text=Commander-in-Chief" alt="Commander-in-Chief">
+    <h3>Commander-in-Chief</h3>
+    <p>Supreme Head of State, Kerio Valley Nation</p>
   </section>
 
   <section>
@@ -124,3 +115,4 @@
   </script>
 </body>
 </html>
+
