@@ -71,25 +71,37 @@
 
     .leader-section {
       display: flex;
-      flex-direction: column;   /* stack image and text vertically */
+      flex-direction: column;   /* stack image, line, and text vertically */
       align-items: center;      /* center horizontally */
       justify-content: center;  /* center vertically */
       text-align: center;       /* center text inside div */
       height: 100vh;            /* full viewport height */
-      background: #f7f7f7;      /* optional background */
+      padding: 2rem;
     }
   
     .leader-section img {
       max-width: 200px;        /* adjust size as needed */
       height: auto;
-      border-radius: 50%;      /* optional: circular image */
+      border-radius: 50%;      /* circular image */
       margin-bottom: 1rem;
     }
   
-    .ceremonial-divider h3,
+    .ceremonial-line {
+      width: 100px;
+      border: 2px solid #c9a227; /* ceremonial gold */
+      margin: 1rem 0;
+    }
+  
+    .ceremonial-divider h3 {
+      margin: 0.2rem 0;
+      color: #002e1f;           /* deep green */
+      font-size: 1.5rem;
+    }
+
     .ceremonial-divider p {
       margin: 0.2rem 0;
-    }
+      color: #555;
+      font-size: 1rem;
     }
 
     /* DESCRIPTION */
