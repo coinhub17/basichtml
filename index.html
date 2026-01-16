@@ -69,37 +69,37 @@
       font-weight: normal;
     }
 
+    /* LEADER SECTION */
     .leader-section {
       display: flex;
       flex-direction: column;   /* stack image, line, and text vertically */
       align-items: center;      /* center horizontally */
-      justify-content: center;  /* center vertically */
-      text-align: center;       /* center text inside div */
-      height: 100vh;            /* full viewport height */
+      justify-content: center;
+      text-align: center;
       padding: 2rem;
     }
-  
+
     .leader-section img {
-      max-width: 200px;        /* adjust size as needed */
+      max-width: 200px;
       height: auto;
-      border-radius: 50%;      /* circular image */
-      margin-bottom: 1rem;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;   /* reduced spacing */
     }
-  
+
     .ceremonial-line {
-      width: 100px;
-      border: 2px solid #c9a227; /* ceremonial gold */
-      margin: 1rem 0;
+      width: 120px;
+      border-top: 3px solid var(--ceremonial-gold); /* golden divider */
+      margin: 0.5rem 0;        /* reduced spacing above/below */
     }
-  
+
     .ceremonial-divider h3 {
-      margin: 0.2rem 0;
-      color: #002e1f;           /* deep green */
+      margin: 0.2rem 0 0.1rem 0; /* tighter spacing above/below */
+      color: var(--deep-green);
       font-size: 1.5rem;
     }
 
     .ceremonial-divider p {
-      margin: 0.2rem 0;
+      margin: 0;
       color: #555;
       font-size: 1rem;
     }
@@ -193,21 +193,23 @@
     <img src="/logo8.png" alt="Kerio Valley Nation Court of Arms">
     <h3>Court of Arms</h3>
   </div>
-  <section class="leader-section">
-    <img src="/ppp.jpg" alt="Commander-in-Chief">
-    <div class="ceremonial-divider">
-      <h3>Chairman</h3>
-      <p>Chairman, Kerio Valley Nation</p>
-    </div>
-  </section>
 </section>
 
-
+<section class="leader-section">
+  <img src="/ppp.jpg" alt="Commander-in-Chief">
+  <!-- Golden Divider -->
+  <div class="ceremonial-line"></div>
+  <!-- Titles below divider -->
+  <div class="ceremonial-divider">
+    <h3>Chairman</h3>
+    <p>Chairman, Kerio Valley Nation</p>
+  </div>
+</section>
 
 <section class="description">
   <p>
     The <strong>Kerio Valley Nation</strong> is a sovereign micronation centered around Rorok Hill, founded upon principles of structured governance, cultural heritage, 
-    and economic development througn tourism,land investment & manufacturing. Under the authority of the <strong>Chairman</strong>, 
+    and economic development througn tourism, land investment & manufacturing. Under the authority of the <strong>Chairman</strong>, 
     the Nation maintains formal administrative institutions, ceremonial documentation, and international engagement. 
     Investors and applicants are admitted through a regulated process reflecting dignity, order, and long-term national vision.
   </p>
@@ -259,6 +261,8 @@
 </script>
 
 </body>
+</html>
+
 </html>
 
 
