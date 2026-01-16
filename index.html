@@ -242,6 +242,24 @@
   &copy; 2026 Kerio Valley Nation — All Rights Reserved
 </footer>
 
+<script>
+    const form = document.querySelector('form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch('/', {
+        method: 'POST',
+        body: formData
+      }).then(() => {
+        successMessage.style.display = 'block';
+        form.reset();
+      }).catch((error) => alert('Submission failed: ' + error));
+    });
+  </script>
+
 </body>
 </html>
 
